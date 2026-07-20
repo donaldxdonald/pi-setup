@@ -1,0 +1,45 @@
+{
+  "name": "donaldpi",
+  "version": "0.0.0",
+  "description": "Donald Mok's Pi agent setup",
+  "main": "index.js",
+  "type": "module",
+  "packageManager": "pnpm@11.15.1",
+  "scripts": {
+    "build": "tsup",
+    "prepare": "simple-git-hooks"
+  },
+  "author": "donaldxdonald",
+  "license": "MIT",
+  "keywords": [
+    "pi-package"
+  ],
+  "devDependencies": {
+    "@dndxdnd/eslint-config": "^2.11.2",
+    "bumpp": "^11.1.0",
+    "eslint": "^9.39.5",
+    "lint-staged": "^17.1.0",
+    "simple-git-hooks": "^2.13.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-tui": "*",
+    "typebox": "*"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts}": [
+      "eslint"
+    ]
+  },
+  "pi": {
+    "prompts": [
+      "./prompts"
+    ]
+  }
+}

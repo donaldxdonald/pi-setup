@@ -1,0 +1,6 @@
+allowBuilds:
+  '@google/genai': true
+  esbuild: true
+  protobufjs: true
+  simple-git-hooks: true
+  unrs-resolver: true
