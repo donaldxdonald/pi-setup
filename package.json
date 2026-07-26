@@ -7,7 +7,7 @@
   "packageManager": "pnpm@11.15.1",
   "scripts": {
     "build": "tsup",
-    "prepare": "simple-git-hooks"
+    "gh": "simple-git-hooks"
   },
   "author": "donaldxdonald",
   "license": "MIT",
