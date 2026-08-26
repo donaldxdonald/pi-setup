@@ -4,3 +4,5 @@ allowBuilds:
   protobufjs: true
   simple-git-hooks: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - bumpp@12.2.2

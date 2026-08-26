@@ -16,7 +16,7 @@
   ],
   "devDependencies": {
     "@dndxdnd/eslint-config": "^2.11.2",
-    "bumpp": "^11.1.0",
+    "bumpp": "^12.2.2",
     "eslint": "^9.39.5",
     "lint-staged": "^17.1.0",
     "simple-git-hooks": "^2.13.1",
