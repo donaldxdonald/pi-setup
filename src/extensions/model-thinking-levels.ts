@@ -111,11 +111,13 @@ export default function registerModelThinkingLevels(pi: ExtensionAPI): void {
     })
   }
 
-  async function rememberSafely(key: string, level: ThinkingLevel): Promise<void> {
+  async function rememberSafely(key: string, level: ThinkingLevel): Promise<boolean> {
     try {
       await remember(key, level)
+      return true
     } catch(error) {
       console.error(`[model-thinking-levels] Could not save ${key}:`, error)
+      return false
     }
   }
 
@@ -137,17 +139,20 @@ export default function registerModelThinkingLevels(pi: ExtensionAPI): void {
     }
   }
 
-  function rememberIfStillCurrent(key: string, level: ThinkingLevel, ignore: boolean): void {
+  function rememberIfStillCurrent(key: string, level: ThinkingLevel, ignore: boolean, ctx: ExtensionContext): void {
     const pendingSave = Promise.resolve().then(async() => {
       if (!enabled || ignore || key !== activeModelKey || pi.getThinkingLevel() !== level) return
-      await rememberSafely(key, level)
+
+      if (await rememberSafely(key, level)) {
+        ctx.ui.notify(`Remembered thinking level "${level}" for ${key}.`, 'info')
+      }
     })
 
     pendingSaves.add(pendingSave)
     void pendingSave.finally(() => pendingSaves.delete(pendingSave))
   }
 
-  async function applyRememberedLevel(key: string): Promise<void> {
+  async function applyRememberedLevel(key: string, ctx: ExtensionContext): Promise<void> {
     if (!enabled) return
 
     const rememberedLevel = preferences.models[key]
@@ -163,7 +168,10 @@ export default function registerModelThinkingLevels(pi: ExtensionAPI): void {
     const effectiveLevel = pi.getThinkingLevel()
     if (effectiveLevel !== rememberedLevel) {
       await rememberSafely(key, effectiveLevel)
+      return
     }
+
+    ctx.ui.notify(`Applied remembered thinking level "${rememberedLevel}" for ${key}.`, 'info')
   }
 
   pi.registerCommand('remember-thinking', {
@@ -186,7 +194,7 @@ export default function registerModelThinkingLevels(pi: ExtensionAPI): void {
       const model = ctx.model
       const key = model ? modelKey(model) : undefined
       if (nextEnabled && model && key && !hasPinnedThinkingLevel(ctx, model)) {
-        await applyRememberedLevel(key)
+        await applyRememberedLevel(key, ctx)
       }
 
       const persistenceNote = persisted ? '' : ' for this session only'
@@ -204,7 +212,7 @@ export default function registerModelThinkingLevels(pi: ExtensionAPI): void {
     activeModelKey = key
 
     if (enabled && model && key && !hasPinnedThinkingLevel(ctx, model)) {
-      await applyRememberedLevel(key)
+      await applyRememberedLevel(key, ctx)
     }
   })
 
@@ -213,7 +221,7 @@ export default function registerModelThinkingLevels(pi: ExtensionAPI): void {
     activeModelKey = key
 
     if (enabled && !hasPinnedThinkingLevel(ctx, event.model)) {
-      await applyRememberedLevel(key)
+      await applyRememberedLevel(key, ctx)
     }
   })
 
@@ -224,7 +232,7 @@ export default function registerModelThinkingLevels(pi: ExtensionAPI): void {
 
     // Pi does not await this event before model_select. Defer the write so a
     // model switch can restore its preference before we decide what to keep.
-    rememberIfStillCurrent(key, event.level, key !== activeModelKey || key === applyingPreferenceFor)
+    rememberIfStillCurrent(key, event.level, key !== activeModelKey || key === applyingPreferenceFor, ctx)
   })
 
   pi.on('session_shutdown', async() => {
