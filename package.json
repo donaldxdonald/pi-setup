@@ -1,6 +1,6 @@
 {
   "name": "donaldpi",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Donald Mok's Pi agent setup",
   "main": "index.js",
   "type": "module",
