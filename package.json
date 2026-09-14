@@ -7,6 +7,7 @@
   "packageManager": "pnpm@11.15.1",
   "scripts": {
     "build": "tsup",
+    "bump": "bumpp",
     "gh": "simple-git-hooks"
   },
   "author": "donaldxdonald",
@@ -38,11 +39,10 @@
     ]
   },
   "dependencies": {
-    "@narumitw/pi-goal": "^0.54.4",
     "@router-for-me/pi-cliproxyapi-provider": "^1.4.15",
     "@tintinweb/pi-subagents": "^0.19.0",
     "pi-mcp-adapter": "^2.32.1",
-    "pi-web-access": "^0.27.0"
+    "pi-web-access": "^0.29.0"
   },
   "bundleDependencies": [
     "@narumitw/pi-goal",

@@ -17,9 +17,6 @@ importers:
       '@earendil-works/pi-tui':
         specifier: '*'
         version: 0.84.3
-      '@narumitw/pi-goal':
-        specifier: ^0.54.4
-        version: 0.54.4(@earendil-works/pi-ai@0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3))(@earendil-works/pi-coding-agent@0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3))(@earendil-works/pi-tui@0.84.3)(typebox@1.3.19)
       '@router-for-me/pi-cliproxyapi-provider':
         specifier: ^1.4.15
         version: 1.4.15(@earendil-works/pi-ai@0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3))(@earendil-works/pi-coding-agent@0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3))
@@ -30,8 +27,8 @@ importers:
         specifier: ^2.32.1
         version: 2.32.1(@earendil-works/pi-ai@0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3))(@earendil-works/pi-tui@0.84.3)(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(typebox@1.3.19)(zod@4.4.3)
       pi-web-access:
-        specifier: ^0.27.0
-        version: 0.27.0(@earendil-works/pi-ai@0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3))(@earendil-works/pi-coding-agent@0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3))(@earendil-works/pi-tui@0.84.3)
+        specifier: ^0.29.0
+        version: 0.29.0(@earendil-works/pi-ai@0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3))(@earendil-works/pi-coding-agent@0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3))(@earendil-works/pi-tui@0.84.3)
       typebox:
         specifier: '*'
         version: 1.3.19
@@ -720,20 +717,6 @@ packages:
     peerDependencies:
       '@emnapi/core': ^1.7.1
       '@emnapi/runtime': ^1.7.1
-
-  '@narumitw/pi-goal@0.54.4':
-    resolution: {integrity: sha512-WqGGYnX5YBaEUlkC2Lh3sFHizJ6/hiGBijybOBv/7RRDZvpMdfygORIl5OHhzqSPekC9+z0ROxiCzPE6hS17jQ==}
-    peerDependencies:
-      '@earendil-works/pi-ai': '*'
-      '@earendil-works/pi-coding-agent': '*'
-      '@earendil-works/pi-tui': '*'
-      typebox: '*'
-
-  '@narumitw/pi-tui-kit@0.59.0':
-    resolution: {integrity: sha512-KBbOcciJD+HVbeduUwBUiSy2AehMGYeOwiRPXvac5tcjuh3SDoQ+7qsNPt2s/ku6exJKZp0GYtAVsiu5ySddmA==}
-    peerDependencies:
-      '@earendil-works/pi-coding-agent': '*'
-      '@earendil-works/pi-tui': '*'
 
   '@ota-meshi/ast-token-store@0.3.0':
     resolution: {integrity: sha512-XRO0zi2NIUKq2lUk3T1ecFSld1fMWRKE6naRFGkgkdeosx7IslyUKNv5Dcb5PJTja9tHJoFu0v/7yEpAkrkrTg==}
@@ -2220,10 +2203,6 @@ packages:
     resolution: {integrity: sha512-XcJEP5dDC8liHBh52mlLjU18fNvu1ckFsu0QpIG3+APZ270fsj9wxpiA6cOURmbUEuoMVgjbC2+UYgTdCqqgzA==}
     engines: {node: '>=18'}
 
-  grok-mermaid@0.2.3:
-    resolution: {integrity: sha512-/4KopAbsjvuRP9MdPtlDjOHUmUVEohOX73JNcsWpzAtFxh+bq5+Dhb6gzvRieLDwIPQIR3/vy8V1NNTuz4Zsmg==}
-    engines: {node: '>=18'}
-
   has-bigints@1.1.0:
     resolution: {integrity: sha512-R3pbpkcIqv2Pm3dUwgjclDRVmWpTJW2DcMzcIhEXEx1oh/CEMObMm3KLmRJOdvhM7o4uQBnwr8pzRK2sJWIqfg==}
     engines: {node: '>= 0.4'}
@@ -2253,10 +2232,6 @@ packages:
 
   highlight.js@10.7.3:
     resolution: {integrity: sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==}
-
-  highlight.js@11.12.0:
-    resolution: {integrity: sha512-nbfWpyRMcMrPMmDwJB+dhX/eiaPKtc2RB+0QZskqJ3WjRA/FDS0e9hZrx8EC/lbEv8gXy98FcDbNa/dspAaJMg==}
-    engines: {node: '>=12.0.0'}
 
   hono@4.13.5:
     resolution: {integrity: sha512-O6+/eCYRkzzzy0rPWwKLiGBR1nFuUPZynnwjxN1MBA62NNqbT0wQEzQyK2gSO5yDIDB336sXQleAhOHrzlYyKw==}
@@ -2828,8 +2803,8 @@ packages:
       typebox:
         optional: true
 
-  pi-web-access@0.27.0:
-    resolution: {integrity: sha512-D/z7ILwbnJeDjzFPC1j3G1OvO+j2vl2H13ByYcH5FLbrJ1yBdbBwTBcl96Bbt2NEqH5vdmoZ/EpbDG8BTF9W7Q==}
+  pi-web-access@0.29.0:
+    resolution: {integrity: sha512-1l4sAWYkFhiBynJf/mXuxmCHxjhiAyWJ4rfQVFu8UPa0JQhCS9oXAmNXcL0Q1SfrO00plmb6L4IkypJ3n1Q4Kg==}
     peerDependencies:
       '@earendil-works/pi-ai': '*'
       '@earendil-works/pi-coding-agent': '*'
@@ -4214,21 +4189,6 @@ snapshots:
       '@emnapi/runtime': 1.10.0
       '@tybys/wasm-util': 0.10.3
     optional: true
-
-  '@narumitw/pi-goal@0.54.4(@earendil-works/pi-ai@0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3))(@earendil-works/pi-coding-agent@0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3))(@earendil-works/pi-tui@0.84.3)(typebox@1.3.19)':
-    dependencies:
-      '@earendil-works/pi-ai': 0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3)
-      '@earendil-works/pi-coding-agent': 0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3)
-      '@earendil-works/pi-tui': 0.84.3
-      '@narumitw/pi-tui-kit': 0.59.0(@earendil-works/pi-coding-agent@0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3))(@earendil-works/pi-tui@0.84.3)
-      typebox: 1.3.19
-
-  '@narumitw/pi-tui-kit@0.59.0(@earendil-works/pi-coding-agent@0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3))(@earendil-works/pi-tui@0.84.3)':
-    dependencies:
-      '@earendil-works/pi-coding-agent': 0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3)
-      '@earendil-works/pi-tui': 0.84.3
-      grok-mermaid: 0.2.3
-      highlight.js: 11.12.0
 
   '@ota-meshi/ast-token-store@0.3.0': {}
 
@@ -5737,8 +5697,6 @@ snapshots:
 
   grok-mermaid@0.2.2: {}
 
-  grok-mermaid@0.2.3: {}
-
   has-bigints@1.1.0: {}
 
   has-flag@4.0.0: {}
@@ -5762,8 +5720,6 @@ snapshots:
       function-bind: 1.1.2
 
   highlight.js@10.7.3: {}
-
-  highlight.js@11.12.0: {}
 
   hono@4.13.5: {}
 
@@ -6367,7 +6323,7 @@ snapshots:
       - react
       - react-dom
 
-  pi-web-access@0.27.0(@earendil-works/pi-ai@0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3))(@earendil-works/pi-coding-agent@0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3))(@earendil-works/pi-tui@0.84.3):
+  pi-web-access@0.29.0(@earendil-works/pi-ai@0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3))(@earendil-works/pi-coding-agent@0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3))(@earendil-works/pi-tui@0.84.3):
     dependencies:
       '@earendil-works/pi-ai': 0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3)
       '@earendil-works/pi-coding-agent': 0.84.3(@modelcontextprotocol/sdk@1.30.0(supports-color@7.2.0)(zod@4.4.3))(supports-color@7.2.0)(ws@8.21.1)(zod@4.4.3)
