@@ -39,10 +39,10 @@
     ]
   },
   "dependencies": {
-    "@router-for-me/pi-cliproxyapi-provider": "^1.4.15",
+    "@router-for-me/pi-cliproxyapi-provider": "^1.4.21",
     "@tintinweb/pi-subagents": "^0.19.0",
-    "pi-mcp-adapter": "^2.32.1",
-    "pi-web-access": "^0.29.0"
+    "pi-mcp-adapter": "^5.0.0",
+    "pi-web-access": "^0.35.0"
   },
   "bundleDependencies": [
     "@narumitw/pi-goal",
