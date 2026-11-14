@@ -6,3 +6,4 @@ allowBuilds:
   unrs-resolver: true
 minimumReleaseAgeExclude:
   - bumpp@12.2.2
+  - '@tintinweb/pi-subagents@0.25.0'
