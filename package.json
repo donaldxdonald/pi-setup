@@ -1,6 +1,6 @@
 {
   "name": "donaldpi",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Donald Mok's Pi agent setup",
   "main": "index.js",
   "type": "module",
@@ -17,11 +17,11 @@
   ],
   "devDependencies": {
     "@dndxdnd/eslint-config": "^2.11.2",
-    "bumpp": "^12.2.2",
+    "bumpp": "^12.3.0",
     "eslint": "^9.39.5",
     "lint-staged": "^17.1.0",
-    "simple-git-hooks": "^2.13.1",
-    "tsup": "^8.5.1",
+    "simple-git-hooks": "^2.14.0",
+    "tsup": "^9.0.0",
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
@@ -39,25 +39,17 @@
     ]
   },
   "dependencies": {
-    "@router-for-me/pi-cliproxyapi-provider": "^1.4.21",
-    "@tintinweb/pi-subagents": "^0.19.0",
-    "pi-mcp-adapter": "^5.0.0",
-    "pi-web-access": "^0.35.0"
+    "@tintinweb/pi-subagents": "^0.25.0",
+    "pi-web-access": "^0.47.0"
   },
   "bundleDependencies": [
-    "@narumitw/pi-goal",
-    "@router-for-me/pi-cliproxyapi-provider",
     "@tintinweb/pi-subagents",
-    "pi-mcp-adapter",
     "pi-web-access"
   ],
   "pi": {
     "extensions": [
       "./src/index.ts",
-      "node_modules/@narumitw/pi-goal/src/index.ts",
-      "node_modules/@router-for-me/pi-cliproxyapi-provider/extensions/index.ts",
       "node_modules/@tintinweb/pi-subagents/src/index.ts",
-      "node_modules/pi-mcp-adapter/index.ts",
       "node_modules/pi-web-access/index.ts"
     ],
     "prompts": [
